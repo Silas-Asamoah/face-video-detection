@@ -26,7 +26,7 @@ vs = VideoStream(src=0).start()
 time.sleep(2.0)
 
 while True:
-	# grab the frame from the threaded video stream and resize to miaximum width of 400 pixels
+	# grab the frame from the threaded video stream and resize to maximum width of 400 pixels
 	frame = vs.read()
 	frame = imutils.resize(frame, width=400)
  
@@ -43,7 +43,7 @@ while True:
 		# extract the confidence
 		confidence = detections[0, 0, i, 2]
 
-		# filter out weak detections by ensuring the `confidence`
+		# filter out weak detections
 		if confidence < args["confidence"]:
 			continue
 
